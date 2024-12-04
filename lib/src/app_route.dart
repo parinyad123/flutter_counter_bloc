@@ -6,9 +6,11 @@ class AppRoute {
   static const home = 'home';
   static const another = 'another';
 
-  final _route = <String, WidgetBuilder> {
-    home: (context) => MyHomePage(title: "Homepage"),
-    another: (context) => AnotherPage(title: "AnotherPage",),
+  final _route = <String, WidgetBuilder>{
+    home: (context) => const MyHomePage(title: "Homepage"),
+    another: (context) => const AnotherPage(
+          title: "AnotherPage",
+        ),
   };
 
   get getAll => _route;

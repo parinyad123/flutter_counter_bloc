@@ -7,20 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
-  // runApp(const MyApp());
-  BlocOverrides.runZoned(
-      () {
-        runApp(const MyApp());
-      },
-    blocObserver: AppBlocObserver(),
-  );
+  Bloc.observer = AppBlocObserver();
+  runApp(const MyApp());
 }
-
-// void main() {
-//   // Set the global Bloc observer
-//   Bloc.observer = AppBlocObserver();
-//   runApp(const MyApp());
-// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

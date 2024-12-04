@@ -5,11 +5,11 @@ part 'counter_b_event.dart';
 part 'counter_b_state.dart';
 
 class CounterBBloc extends Bloc<CounterBEvent, CounterBState> {
-  CounterBBloc() : super(const CounterBState(count: 0)) { // initial count=0
+  CounterBBloc() : super(const CounterBState(count: 0)) {
+    // initial count=0
 
     // Add Event
     on<CounterBEventAdd>((event, emit) {
-      // TODO: implement event handler
       emit(state.copyWrite(count: state.count + 1));
     });
 
