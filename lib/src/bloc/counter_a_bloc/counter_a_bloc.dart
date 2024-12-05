@@ -10,7 +10,7 @@ class CounterABloc extends Bloc<CounterAEvent, CounterAState> {
       // state.count = state.count + 1; // Don't allow this way because of interfere problem
       // But use emit to create new variable state
       // emit(CounterAState(count: state.count + 1));
-      // or write optional form in state.dart and write the code
+      // or write optional form in __state.dart and write the code
       emit(state.copyWrite(count: state.count + 1));
     });
 

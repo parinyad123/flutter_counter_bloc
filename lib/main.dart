@@ -15,20 +15,23 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
   // const MyApp({Key? key}) : super(key:key);
 
-
   @override
   Widget build(BuildContext context) {
-
-    final counterABloc = BlocProvider<CounterABloc>(create: (context) => CounterABloc());
-    final counterBBloc = BlocProvider<CounterBBloc>(create: (context) => CounterBBloc());
+    final counterABloc =
+        BlocProvider<CounterABloc>(create: (context) => CounterABloc());
+    // create a new instance of CounterABloc and provide it to the widget tree.
+    final counterBBloc =
+        BlocProvider<CounterBBloc>(create: (context) => CounterBBloc());
+    // create a new instance of CounterBBloc and provide it to the widget tree.
 
     return MultiBlocProvider(
-      providers: [counterABloc, counterBBloc], // Register Bloc A/B into system
+      // MultiBlocProvider is used to provide multiple Blocs to the widget tree.
+      providers: [counterABloc, counterBBloc],
       child: MaterialApp(
+        //
         title: 'Flutter Demo',
         routes: AppRoute().getAll,
         theme: ThemeData(
-      
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
           useMaterial3: true,
         ),
@@ -37,5 +40,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

@@ -1,7 +1,10 @@
 import 'dart:developer' as developer;
-import 'package:flutter_bloc/flutter_bloc.dart';
+//  Provides tools for logging messages and debugging with the Dart developer tools.
+import 'package:flutter_bloc/flutter_bloc.dart'; // Contains the core BLoC library, which includes BlocObserver
 
 class AppBlocObserver extends BlocObserver {
+  // AppBlocObserver extends BlocObserver to customize the behavior of the BLoC framework.
+// A custom class inheriting from BlocObserver. This class is used to observe and log BLoC-related activities across the app.
   @override
   void onEvent(Bloc bloc, Object? event) {
     super.onEvent(bloc, event);
